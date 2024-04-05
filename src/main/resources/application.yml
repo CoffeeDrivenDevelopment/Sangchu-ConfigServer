@@ -1,0 +1,32 @@
+spring:
+  config:
+    activate:
+      on-profile: local
+    import:
+      - application-common.yml
+      - security/local/application-config.yml
+      - security/local/application-eureka-client.yml
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile:
+        - dev
+    import:
+      - application-common.yml
+      - security/dev/application-eureka-client.yml
+      - security/dev/application-config.yml
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile:
+        - prod
+    import:
+      - application-common.yml
+      - security/prod/application-eureka-client.yml
+      - security/prod/application-config.yml
